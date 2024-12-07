@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('movies/', include('movies.urls')),
     path('sports/', include('sports.urls')),
+    path('music/', include('music.urls')),
+    path('travel/', include('travel.urls')),
     path('', home, name='home')
 ]

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% if movies %}Update Movies{% else %}Create Movies{% endif %}</title>
- <style>
-        body {
+    <title>{% if travel %}Update Travel{% else %}Create Travel{% endif %}</title>
+    <style>
+    body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
@@ -90,23 +90,23 @@
     </style>
 </head>
 <body>
-    <h1>{% if movies %}Update Movies{% else %}Create Movies{% endif %}</h1>
+    <h1>{% if travel %}Update Travel{% else %}Create Travel{% endif %}</h1>
     <form method="post">
         {% csrf_token %}
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="{{ movies.title }}"><br>
-        <label for="director">Director</label>
-        <input type="text" name="director" id="director" value="{{ movies.director }}"><br>
-        <label for="release_year">Release Year</label>
-        <input type="number" name="release_year" id="release_year" value="{{ movies.release_year }}"><br>
-        <label for="genre">Genre</label>
-        <input type="text" name="genre" id="genre" value="{{ movies.genre }}"><br>
-        {% if movies %}
+        <label for="destination_name">Destination Name</label>
+        <input type="text" name="destination_name" id="destination_name" value="{{ travel.destination_name }}"><br>
+        <label for="country">Country</label>
+        <input type="text" name="country" id="country" value="{{ travel.country }}"><br>
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="10">{{ travel.description }}</textarea>
+        <label for="popular_season">Popular Season</label>
+        <input type="text" name="popular_season" id="popular_season" value="{{ travel.popular_season }}"><br>
+        {% if travel %}
             <button type="submit">update</button>
-            <button><a href="{{ movies.get_detail_url }}">Back to Detail</a></button>
+            <button><a href="{{ travel.get_detail_url }}">Back to Detail</a></button>
         {% else %}
             <button type="submit">Create</button>
-            <button><a href="{% url 'movies:list' %}">Back to List</a></button>
+            <button><a href="{% url 'travel:list' %}">Back to List</a></button>
         {% endif %}
     </form>
 </body>
