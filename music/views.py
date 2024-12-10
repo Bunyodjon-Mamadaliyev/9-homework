@@ -49,7 +49,7 @@ def music_update(request, pk):
             music.save()
             return redirect(music.get_detail_url())
     ctx = {'music': music}
-    return render(request, 'music/music-form', ctx)
+    return render(request, 'music/music-form.html', ctx)
 
 
 

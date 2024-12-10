@@ -49,7 +49,7 @@ def sports_update(request, pk):
             sports.save()
             return redirect(sports.get_detail_url())
     ctx = {'sports': sports}
-    return render(request, 'sports/sports-form', ctx)
+    return render(request, 'sports/sports-form.html', ctx)
 
 
 

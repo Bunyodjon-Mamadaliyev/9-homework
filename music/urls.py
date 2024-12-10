@@ -6,6 +6,7 @@ from . import views
 app_name = 'music'
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('list/', views.music_list, name='list'),
     path('create/', views.music_create, name='create'),
     path('detail/<int:pk>/', views.music_detail, name='detail'),

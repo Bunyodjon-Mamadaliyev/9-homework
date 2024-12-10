@@ -7,9 +7,13 @@
 <body>
     <h1>Movies List</h1>
     <button><a href="{% url 'movies:create' %}">Create Movies</a></button>
+    <button><a href="{% url 'movies:home' %}">Home Movies</a></button>
     {% for movies in movies %}
     <a href="{{ movies.get_detail_url }}">
     <h3>{{ movies.title }}</h3>
+    <h3>{{ movies.director }}</h3>
+    <h3>{{ movies.release_year }}</h3>
+    <h3>{{ movies.genre }}</h3>
     </a>
     {% empty %}
         <h3>No Movies</h3>

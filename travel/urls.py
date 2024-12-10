@@ -6,6 +6,7 @@ from . import views
 app_name = 'travel'
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('list/', views.travel_list, name='list'),
     path('create/', views.travel_create, name='create'),
     path('detail/<int:pk>/', views.travel_detail, name='detail'),

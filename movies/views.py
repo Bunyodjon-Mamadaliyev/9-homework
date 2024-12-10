@@ -49,12 +49,12 @@ def movies_update(request, pk):
             movies.save()
             return redirect(movies.get_detail_url())
     ctx = {'movies': movies}
-    return render(request, 'movies/movies-form', ctx)
+    return render(request, 'movies/movies-form.html', ctx)
 
 
 
 def movies_delete(request, pk):
     movies = get_object_or_404(Movies, pk=pk)
     movies.delete()
-    return redirect('movies:list')
+    return redirect(request, 'movies:list')
 

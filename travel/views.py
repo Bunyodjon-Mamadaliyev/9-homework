@@ -32,7 +32,7 @@ def travel_create(request):
 def travel_detail(request, pk):
     travel = get_object_or_404(Travel, pk=pk)
     ctx = {'travel': travel}
-    return render(request, 'travel/travel.html', ctx)
+    return render(request, 'travel/detail.html', ctx)
 
 def travel_update(request, pk):
     travel = get_object_or_404(Travel, pk=pk)
